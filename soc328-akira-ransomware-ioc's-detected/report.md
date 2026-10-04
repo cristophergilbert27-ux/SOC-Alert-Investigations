@@ -103,17 +103,17 @@ At the time of review the host was not isolated, so isolation is the first thing
 
 **MITRE ATT&CK:**
 
-| Tactic          | Technique                                            | ID        |
-| --------------- | ---------------------------------------------------- | --------- |
-| Initial Access  | Phishing: Spearphishing Attachment                   | T1566.001 |
-| Execution       | User Execution: Malicious File                       | T1204.002 |
-| Execution       | Command and Scripting Interpreter: PowerShell        | T1059.001 |
-| Execution       | Command and Scripting Interpreter: Windows Cmd Shell | T1059.003 |
-| Execution       | Windows Management Instrumentation                   | T1047     |
-| Defense Evasion | Deobfuscate/Decode Files or Information              | T1140     |
-| Impact          | Inhibit System Recovery                              | T1490     |
-| Impact          | Data Destruction                                     | T1485     |
-| Impact          | Data Encrypted for Impact                            | T1486     |
+| Tactic         | Technique                                            | ID        |
+| -------------- | ---------------------------------------------------- | --------- |
+| Initial Access | Phishing: Spearphishing Attachment                   | T1566.001 |
+| Execution      | User Execution: Malicious File                       | T1204.002 |
+| Execution      | Command and Scripting Interpreter: PowerShell        | T1059.001 |
+| Execution      | Command and Scripting Interpreter: Windows Cmd Shell | T1059.003 |
+| Execution      | Windows Management Instrumentation                   | T1047     |
+| Stealth        | Deobfuscate/Decode Files or Information              | T1140     |
+| Impact         | Inhibit System Recovery                              | T1490     |
+| Impact         | Data Destruction                                     | T1485     |
+| Impact         | Data Encrypted for Impact                            | T1486     |
 
 ---
 

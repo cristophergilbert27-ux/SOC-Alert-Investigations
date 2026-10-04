@@ -11,15 +11,15 @@
 
 ## 1. Alert Overview
 
-| Field               | Value                                               |
-| :------------------ | :-------------------------------------------------- |
-| Alert ID            | SOC337                                              |
-| Trigger Time        | 2025-03-06 07:15:00 +03:00                          |
-| Rule Name           | SOC337 Lazarus Phishing Campaign Detected (APT38)   |
-| Severity            | High                                                |
-| Source Address      | trevorgreer9312@gmail.com (SMTP 152.89.61.96)       |
-| Destination Address | ellen@letsdefend.io                                 |
-| Device Action       | Allowed                                             |
+| Field               | Value                                             |
+| :------------------ | :------------------------------------------------ |
+| Alert ID            | SOC337                                            |
+| Trigger Time        | 2025-03-06 07:15:00 +03:00                        |
+| Rule Name           | SOC337 Lazarus Phishing Campaign Detected (APT38) |
+| Severity            | High                                              |
+| Source Address      | trevorgreer9312@gmail.com (SMTP 152.89.61.96)     |
+| Destination Address | ellen@letsdefend.io                               |
+| Device Action       | Allowed                                           |
 
 The rule looks for inbound mail that matches the tradecraft of Lazarus, also tracked as APT38. The group runs long lived recruitment campaigns against people who work in crypto and finance, and the usual opening move is a job offer that arrives from an ordinary consumer mailbox rather than the company it claims to represent. The rule fired because a message with a recruitment subject line reached an internal user, and because the device action was Allowed, the mail landed in her inbox instead of being quarantined.
 
@@ -33,29 +33,29 @@ The rule looks for inbound mail that matches the tradecraft of Lazarus, also tra
 
 All timestamps below are in endpoint local time. Log Management shows the same events with a four hour offset, which matters when you line the two views up against each other.
 
-| Time                      | Activity                                                              |
-| :------------------------ | :-------------------------------------------------------------------- |
-| 2025-03-06 11:15:00       | Phishing email delivered to ellen@letsdefend.io, final action Allowed  |
-| 2025-03-07 00:21:35       | User visits blockchainjobhub.com/invite/E3fM8yF7                       |
-| 2025-03-07 00:25:04       | curl.exe downloads nvidiaupdate.zip from api.drivercams.cloud          |
-| 2025-03-07 00:25:26       | PowerShell extracts the archive to C:\Users\LetsDefend\nvidiadrive     |
-| 2025-03-07 00:25:55       | wscript.exe runs nvidiadrive\update.vbs                                |
+| Time                            | Activity                                                              |
+| :------------------------------ | :-------------------------------------------------------------------- |
+| 2025-03-06 11:15:00             | Phishing email delivered to ellen@letsdefend.io, final action Allowed |
+| 2025-03-07 00:21:35             | User visits blockchainjobhub.com/invite/E3fM8yF7                      |
+| 2025-03-07 00:25:04             | curl.exe downloads nvidiaupdate.zip from api.drivercams.cloud         |
+| 2025-03-07 00:25:26             | PowerShell extracts the archive to C:\Users\LetsDefend\nvidiadrive    |
+| 2025-03-07 00:25:55             | wscript.exe runs nvidiadrive\update.vbs                               |
 | 2025-03-07 00:24:59 to 00:27:37 | Outbound traffic reviewed, no connections to malicious infrastructure |
 
 From the moment the link was opened to the moment the script ran, four minutes and twenty seconds passed.
 
 **Affected Entities:**
 
-| Entity            | Value                                                                       |
-| :---------------- | :-------------------------------------------------------------------------- |
-| Affected host     | 172.16.17.214 (Ellen)                                                       |
-| User account      | EC2AMAZ-ILGVOIN\LetsDefend                                                  |
-| Recipient         | ellen@letsdefend.io                                                         |
-| Sender            | trevorgreer9312@gmail.com                                                   |
-| Phishing URL      | https://blockchainjobhub.com/invite/E3fM8yF7                                |
-| Payload source    | https://api.drivercams.cloud/nvidia-al.update                               |
-| Files dropped     | C:\Users\LetsDefend\nvidiaupdate.zip, C:\Users\LetsDefend\nvidiadrive\update.vbs |
-| Processes involved| curl.exe, powershell.exe, wscript.exe, all spawned by explorer.exe          |
+| Entity             | Value                                                                            |
+| :----------------- | :------------------------------------------------------------------------------- |
+| Affected host      | 172.16.17.214 (Ellen)                                                            |
+| User account       | EC2AMAZ-ILGVOIN\LetsDefend                                                       |
+| Recipient          | ellen@letsdefend.io                                                              |
+| Sender             | trevorgreer9312@gmail.com                                                        |
+| Phishing URL       | https://blockchainjobhub.com/invite/E3fM8yF7                                     |
+| Payload source     | https://api.drivercams.cloud/nvidia-al.update                                    |
+| Files dropped      | C:\Users\LetsDefend\nvidiaupdate.zip, C:\Users\LetsDefend\nvidiadrive\update.vbs |
+| Processes involved | curl.exe, powershell.exe, wscript.exe, all spawned by explorer.exe               |
 
 **Reasoning:**
 
@@ -87,29 +87,29 @@ For scope, the activity is confined to this host and this user account. The exec
 
 **Indicators of Compromise:**
 
-| Type         | Indicator                                      | Notes                                                        |
-| :----------- | :--------------------------------------------- | :----------------------------------------------------------- |
-| Email        | trevorgreer9312@gmail.com                      | Sender, fake Coinbase recruiter using a genuine Gmail account |
-| IP           | 152.89.61.96                                   | SMTP address recorded in the alert                            |
-| IP           | 91.231.86.6                                    | Resolution of blockchainjobhub.com at time of analysis        |
-| Domain / URL | https://blockchainjobhub.com/invite/E3fM8yF7   | Phishing landing page visited by the user, 14/92 on VirusTotal|
-| Domain / URL | https://api.drivercams.cloud/nvidia-al.update  | Payload download source, 15/98 on VirusTotal                  |
-| File Name    | nvidiaupdate.zip                               | Downloaded archive                                            |
-| File Name    | update.vbs                                     | Script executed through wscript.exe                           |
-| File Path    | C:\Users\LetsDefend\nvidiadrive\               | Extraction directory                                          |
+| Type         | Indicator                                     | Notes                                                          |
+| :----------- | :-------------------------------------------- | :------------------------------------------------------------- |
+| Email        | trevorgreer9312@gmail.com                     | Sender, fake Coinbase recruiter using a genuine Gmail account  |
+| IP           | 152.89.61.96                                  | SMTP address recorded in the alert                             |
+| IP           | 91.231.86.6                                   | Resolution of blockchainjobhub.com at time of analysis         |
+| Domain / URL | https://blockchainjobhub.com/invite/E3fM8yF7  | Phishing landing page visited by the user, 14/92 on VirusTotal |
+| Domain / URL | https://api.drivercams.cloud/nvidia-al.update | Payload download source, 15/98 on VirusTotal                   |
+| File Name    | nvidiaupdate.zip                              | Downloaded archive                                             |
+| File Name    | update.vbs                                    | Script executed through wscript.exe                            |
+| File Path    | C:\Users\LetsDefend\nvidiadrive\              | Extraction directory                                           |
 
 **MITRE ATT&CK:**
 
-| Tactic               | Technique                                            | ID        |
-| :------------------- | :--------------------------------------------------- | :-------- |
-| Initial Access       | Phishing: Spearphishing Link                         | T1566.002 |
-| Execution            | User Execution: Malicious Link                       | T1204.001 |
-| Execution            | User Execution: Malicious File                       | T1204.002 |
-| Execution            | Command and Scripting Interpreter: PowerShell        | T1059.001 |
-| Execution            | Command and Scripting Interpreter: Visual Basic      | T1059.005 |
-| Command and Control  | Ingress Tool Transfer                                | T1105     |
-| Defense Evasion      | Deobfuscate/Decode Files or Information              | T1140     |
-| Defense Evasion      | Masquerading: Match Legitimate Name or Location      | T1036.005 |
+| Tactic              | Technique                                       | ID        |
+| :------------------ | :---------------------------------------------- | :-------- |
+| Initial Access      | Phishing: Spearphishing Link                    | T1566.002 |
+| Execution           | User Execution: Malicious Link                  | T1204.001 |
+| Execution           | User Execution: Malicious File                  | T1204.002 |
+| Execution           | Command and Scripting Interpreter: PowerShell   | T1059.001 |
+| Execution           | Command and Scripting Interpreter: Visual Basic | T1059.005 |
+| Command and Control | Ingress Tool Transfer                           | T1105     |
+| Stealth             | Deobfuscate/Decode Files or Information         | T1140     |
+| Stealth             | Masquerading: Match Legitimate Name or Location | T1036.005 |
 
 ## 3. Investigation
 

@@ -102,8 +102,8 @@ The alert listed eight techniques. Six held up in the logs.
 | Initial Access      | Phishing: Spearphishing Link                  | T1566.002 |
 | Execution           | User Execution: Malicious Link                | T1204.001 |
 | Execution           | Command and Scripting Interpreter: PowerShell | T1059.001 |
-| Defense Evasion     | Obfuscated Files or Information               | T1027     |
-| Defense Evasion     | System Binary Proxy Execution: Mshta          | T1218.005 |
+| Stealth             | Obfuscated Files or Information               | T1027     |
+| Stealth             | System Binary Proxy Execution: Mshta          | T1218.005 |
 | Command and Control | Ingress Tool Transfer                         | T1105     |
 
 ---

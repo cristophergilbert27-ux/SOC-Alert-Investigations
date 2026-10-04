@@ -110,8 +110,6 @@ First things for L2 to pick up: confirm no payload was retrieved outside the log
 | File Name      | PERSPICIATISM.iso                                                | ISO container. 30 of 52 on VirusTotal                              |
 | File Path      | c:\wnd\3291.png                                                  | Intended payload location, never present on the host               |
 
-Excluded after review: Open_Document.exe (A70D52EDA892EDC073932B462CC367CDBFBACE3F4196857D8D4FA869A13DE792) is the unmodified Microsoft write.exe, 0 of 49 on VirusTotal. It is a legitimate binary abused as a side loading host and should not be blocked by hash. The outbound address 172.31.19.77 is a private AWS VPC address and does not belong to the attacker.
-
 **MITRE ATT&CK**
 
 | Tactic              | Technique                                                | ID        |
@@ -119,9 +117,9 @@ Excluded after review: Open_Document.exe (A70D52EDA892EDC073932B462CC367CDBFBACE
 | Initial Access      | Phishing: Spearphishing Attachment                       | T1566.001 |
 | Execution           | User Execution: Malicious File                           | T1204.002 |
 | Execution           | Command and Scripting Interpreter: Windows Command Shell | T1059.003 |
-| Defense Evasion     | Subvert Trust Controls: Mark-of-the-Web Bypass           | T1553.005 |
-| Defense Evasion     | Masquerading: Match Legitimate Name or Location          | T1036.005 |
-| Defense Evasion     | System Binary Proxy Execution: Rundll32                  | T1218.011 |
+| Defense Impairment  | Subvert Trust Controls: Mark-of-the-Web Bypass           | T1553.005 |
+| Stealth             | Masquerading: Match Legitimate Name or Location          | T1036.005 |
+| Stealth             | System Binary Proxy Execution: Rundll32                  | T1218.011 |
 | Persistence         | Hijack Execution Flow: DLL Side-Loading                  | T1574.002 |
 | Command and Control | Ingress Tool Transfer                                    | T1105     |
 | Command and Control | Application Layer Protocol: Web Protocols                | T1071.001 |
