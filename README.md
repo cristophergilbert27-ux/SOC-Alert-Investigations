@@ -15,7 +15,8 @@ The focus here is the reasoning: what was checked, what each piece of evidence r
 | # | Incident | Platform | Severity | Category | Date | Report |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Click Fix phishing results in PowerShell execution and an outbound payload request | LetsDefend | Critical | Phishing | 03/13/25 | [Read](soc338-lumma-stealer-dll-sideloading/report.md) |
-| 2 | Lazarus (APT38) ClickFix phishing results in payload download and VBScript execution on the endpoint | LetsDefend | High | Phishing | 06/03/25 | [Read](soc337-lazarus-phishing-campaign-detected(APT38)/report.md) |
+| 2 | Akira ransomware executed on an internal server after an invoice themed phishing email | LetsDefend | High | Malware (Ransomware) | 02/10/24 | [Read](soc328-akira-ransomware-ioc's-detected/report.md) |
+| 3 | Lazarus (APT38) ClickFix phishing results in payload download and VBScript execution on the endpoint | LetsDefend | High | Phishing | 06/03/25 | [Read](soc337-lazarus-phishing-campaign-detected(APT38)/report.md) |
 
 <!-- INCIDENTS:END -->
 
