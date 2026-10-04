@@ -1,6 +1,6 @@
 # Incident Report — Lumma Stealer Delivered Through a Click Fix Phishing Page
 
-**Incident:** Phishing email leads to user executed PowerShell and an outbound payload request
+**Incident:** Click Fix phishing results in PowerShell execution and an outbound payload request
 **Platform:** LetsDefend
 **Severity:** Critical
 **Category:** Phishing
