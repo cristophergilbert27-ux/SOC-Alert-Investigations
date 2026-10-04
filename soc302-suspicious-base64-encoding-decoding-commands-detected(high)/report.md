@@ -89,15 +89,15 @@ Log Management shows no connections to any of the ten listed IP addresses, and a
 
 **MITRE ATT&CK:**
 
-| Tactic          | Technique                                     | ID        |
-| --------------- | --------------------------------------------- | --------- |
-| Initial Access  | Brute Force                                   | T1110     |
-| Initial Access  | Valid Accounts                                | T1078     |
-| Initial Access  | External Remote Services                      | T1133     |
-| Execution       | Command and Scripting Interpreter: Unix Shell | T1059.004 |
-| Discovery       | File and Directory Discovery                  | T1083     |
-| Defense Evasion | Deobfuscate/Decode Files or Information       | T1140     |
-| Collection      | Data from Local System                        | T1005     |
+| Tactic            | Technique                                     | ID        |
+| ----------------- | --------------------------------------------- | --------- |
+| Credential Access | Brute Force                                   | T1110     |
+| Initial Access    | Valid Accounts                                | T1078     |
+| Initial Access    | External Remote Services                      | T1133     |
+| Execution         | Command and Scripting Interpreter: Unix Shell | T1059.004 |
+| Discovery         | File and Directory Discovery                  | T1083     |
+| Defense Evasion   | Deobfuscate/Decode Files or Information       | T1140     |
+| Collection        | Data from Local System                        | T1005     |
 
 ## 3. Investigation
 
