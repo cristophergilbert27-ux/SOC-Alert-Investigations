@@ -14,7 +14,7 @@ The focus here is the reasoning: what was checked, what each piece of evidence r
 
 | # | Incident | Platform | Severity | Category | Date | Report |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Phishing email leads to user executed PowerShell and an outbound payload request | LetsDefend | Critical | Phishing | 2025-03-13 | [Read](SOC338-Lumma-Stealer-DLL Side-Loading via Click Fix Phishing/report.md) |
+| 1 | Phishing email leads to user executed PowerShell and an outbound payload request | LetsDefend | Critical | Phishing | 2025-03-13 | [Read](soc338-lumma-stealer-dll-sideloading/report.md) |
 
 <!-- INCIDENTS:END -->
 
