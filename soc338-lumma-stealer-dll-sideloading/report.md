@@ -4,7 +4,7 @@
 **Platform:** LetsDefend
 **Severity:** Critical
 **Category:** Phishing
-**Date:** 2025-03-13
+**Date:** 03/13/25
 **Related Alerts:** SOC338
 
 > Investigation answers and platform flags are redacted. This report documents the analysis process and reasoning, not the solution to the exercise.
