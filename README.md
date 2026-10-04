@@ -19,6 +19,7 @@ The focus here is the reasoning: what was checked, what each piece of evidence r
 | 3 | Base64 decoding of a credential file after a successful SSH brute force | LetsDefend | High | Unauthorized Access | 17/07/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(high)/report.md) |
 | 4 | Lazarus (APT38) ClickFix phishing results in payload download and VBScript execution on the endpoint | LetsDefend | High | Phishing | 06/03/25 | [Read](soc337-lazarus-phishing-campaign-detected(APT38)/report.md) |
 | 5 | DLL Side Loading via ISO Attachment | LetsDefend | Medium | Malware | 09/09/24 | [Read](soc319-suspicious-dll-execution-detected/report.md) |
+| 6 | SSH Account Compromise Leading to Encoded Exfiltration of System Account Data | LetsDefend | Medium | Brute Force / Data Exfiltration | 07/08/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(medium)/report.md) |
 
 <!-- INCIDENTS:END -->
 
