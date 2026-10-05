@@ -68,7 +68,7 @@ The only child process observed is C:\Windows\Boot\PCAT\memtest.exe, which was c
 
 **Escalation:**
 
-Escalated to L2.
+Requaired.
 
 A binary flagged by 54 of 72 antivirus vendors ran on host Alonso after a filename trick fooled the user. The download, the extraction, and the execution all completed without a single control intervening, so the host has to be treated as compromised until someone proves otherwise.
 

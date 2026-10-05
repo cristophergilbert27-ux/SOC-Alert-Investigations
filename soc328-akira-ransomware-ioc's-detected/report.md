@@ -72,11 +72,9 @@ The execution was detected by Windows Defender but not blocked. Remediation acti
 
 **Escalation:**
 
-Escalated to L2.
+Requaired.
 
-Akira ransomware ran on Vergil and successfully disabled local recovery. The endpoint product recorded the activity without blocking it. The affected machine is a server rather than a workstation, which raises both the potential data impact and the risk of the infection spreading.
-
-At the time of review the host was not isolated, so isolation is the first thing L2 should do. After that, the open question is whether encryption completed, which could not be answered here because remote access to the host was unavailable. The good news to hand over is that the campaign reached one mailbox and no propagation attempts were observed.
+Akira ransomware ran on Vergil and successfully disabled local recovery. The endpoint product recorded the activity without blocking it. The affected machine is a server rather than a workstation, which raises both the potential data impact and the risk of the infection spreading. At the time of review the host was not isolated
 
 **Recommended Remediation Action:**
 

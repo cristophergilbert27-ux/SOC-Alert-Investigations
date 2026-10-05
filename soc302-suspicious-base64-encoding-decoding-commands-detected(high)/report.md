@@ -65,7 +65,7 @@ Log Management shows no connections to any of the ten listed IP addresses, and a
 
 **Escalation:**
 
-Escalated to L2. The brute force gave the attacker an interactive shell, and the file they decoded carries working credentials for ten other systems.
+Requaired. The brute force gave the attacker an interactive shell, and the file they decoded carries working credentials for ten other systems.
 
 **Recommended Remediation Action:**
 

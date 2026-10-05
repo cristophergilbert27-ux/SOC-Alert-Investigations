@@ -69,7 +69,7 @@ The file that left the host was a 19 byte decoy written by the attacker's own sc
 
 **Escalation:**
 
-Escalated to L2.
+Requaired.
 
 An external attacker brute forced RDP, took over the local account LetsDefend, and used that access to push a file to an FTP server outside the environment. No control blocked either half of that. Host 172.16.17.237 has already been isolated from the network.
 

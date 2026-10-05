@@ -1,4 +1,4 @@
-# Incident Report — Lumma Stealer Delivered Through a Click Fix Phishing Page
+# Incident Report: Lumma Stealer Delivered Through a Click Fix Phishing Page
 
 **Incident:** Click Fix phishing results in PowerShell execution and an outbound payload request
 **Platform:** LetsDefend
@@ -35,28 +35,35 @@ The field that made this urgent was Device Action. The mail was allowed into the
 
 **Verdict:** True Positive
 
-**Time of Activity:** Endpoint logs are stamped UTC+3, firewall and proxy logs UTC. The timeline below is normalised to UTC+3.
+**Time of Activity:**
 
-13:44:00: Phishing email delivered to the inbox, device action Allowed
-23:26:08: User opens windows-update.site from webmail
-23:26:19: PowerShell executes an obfuscated command, truncated in the log
-23:26:20: mshta.exe sends a GET request to overcoatpassably.shop, allowed by the firewall
-23:26:31: PowerShell executes the same command in clear text
-23:26:32: PowerShell executes the obfuscated command in full
-after : No further outbound traffic from the host
+| Time                | Event                                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| 2025-03-13 13:44:00 | Phishing email delivered to dylan@letsdefend.io from update@windows-update.site, final action Allowed |
+| 2025-03-13 23:26:08 | User opens windows-update.site from webmail, proxy referrer mail.letsdefend.io                        |
+| 2025-03-13 23:26:19 | PowerShell executes an obfuscated command, truncated in the log                                       |
+| 2025-03-13 23:26:20 | mshta.exe sends a GET request to overcoatpassably.shop, allowed by the firewall                       |
+| 2025-03-13 23:26:31 | PowerShell executes the same command in clear text                                                    |
+| 2025-03-13 23:26:32 | PowerShell executes the obfuscated command in full                                                    |
+| After 23:26:32      | No further outbound traffic from the host                                                             |
+
+Endpoint logs are stamped UTC+3, firewall and proxy logs UTC. The timeline above is normalised to UTC+3. Eleven seconds separate the page visit from the first PowerShell execution, which is roughly how long Win+R, Ctrl+V, Enter takes when you are reading the steps off a page.
 
 **Affected Entities:**
 
-Recipient : dylan@letsdefend.io |
-Host : Dylan, 172.16.17.216, Windows 10 |
-Process user : EC2AMAZ-ILGVOIN\LetsDefend |
-Process : mshta.exe, PID 7284, C:\Windows\System32\mshta.exe |
-Parent process : powershell.exe |
-Sender : update@windows-update.site |
-Sender IP : 132.232.40.201 |
-Phishing URL : https://windows-update.site/ |
-Payload URL : https://overcoatpassably.shop/Z8UZbPyVpGfdRS/maloy.mp4 |
-Payload IP : 172.67.139.19 |
+| Entity             | Value                                                               |
+| ------------------ | ------------------------------------------------------------------- |
+| Affected host      | Dylan, 172.16.17.216, Windows 10                                    |
+| User account       | EC2AMAZ-ILGVOIN\LetsDefend                                          |
+| Recipient          | dylan@letsdefend.io                                                 |
+| Sender             | update@windows-update.site                                          |
+| Sender IP          | 132.232.40.201                                                      |
+| Subject            | Upgrade your system to Windows 11 Pro for FREE                      |
+| Phishing URL       | https://windows-update.site/                                        |
+| Payload URL        | https://overcoatpassably.shop/Z8UZbPyVpGfdRS/maloy.mp4              |
+| Payload IP         | 172.67.139.19, Cloudflare, shared with legitimate sites             |
+| Processes involved | powershell.exe, mshta.exe PID 7284 at C:\Windows\System32\mshta.exe |
+| Files dropped      | None observed, mshta.exe pulls its content straight from the URL    |
 
 **Reasoning:**
 
@@ -64,11 +71,9 @@ The alert triggered on a Click Fix phishing email that reached the inbox of dyla
 
 The connection attempt was allowed by the perimeter firewall instead of blocked. No evidence of successful execution or follow up activity was observed on the host.
 
-**Escalation:** Escalated to L2. The user interacted with every stage of this attack. Mail delivered, link clicked, attacker command executed, outbound request to attacker infrastructure permitted. Second stage execution could not be confirmed from the telemetry available at L1, but Lumma Stealer goes after browser credentials and session cookies, and it exfiltrates over HTTPS to infrastructure the host has already contacted. Treat the account as compromised until host forensics says otherwise.
+**Escalation:**
 
-L2 should start with memory and disk forensics on 172.16.17.216, specifically anything mshta.exe touched between 23:26:20 and containment.
-
-Actions already taken at L1: phishing email deleted from the mailbox, host contained through EDR, alert closed as a true positive.
+Requaired. The user interacted with every stage of this attack. Mail delivered, link clicked, attacker command executed, outbound request to attacker infrastructure permitted. Second stage execution could not be confirmed from the telemetry available at L1, but Lumma Stealer goes after browser credentials and session cookies, and it exfiltrates over HTTPS to infrastructure the host has already contacted. Treat the account as compromised until host forensics says otherwise.
 
 **Recommended Remediation Action:**
 
@@ -241,7 +246,3 @@ The same source address search shows the last outbound connection from the host 
 No C2 traffic, no exfiltration after mshta.exe reached the attacker's server. On the evidence available, the chain stops at payload retrieval. Four things I could not prove: whether the second stage downloaded successfully, whether Lumma Stealer executed, whether DLL side loading happened, and whether any credentials or cookies left the host.
 
 None of that means the answer is no. It means L1 telemetry cannot see that far, which is why the host got contained and the alert went up to L2.
-
-```
-
-```

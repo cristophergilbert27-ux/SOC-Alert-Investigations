@@ -19,9 +19,10 @@ The focus here is the reasoning: what was checked, what each piece of evidence r
 | 3 | Base64 decoding of a credential file after a successful SSH brute force | LetsDefend | High | Unauthorized Access | 17/07/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(high)/report.md) |
 | 4 | Data Exfiltration to an External FTP Server After an RDP Brute Force | LetsDefend | High | Data Exfiltration | 25/06/24 | [Read](soc295-potential-data-exfiltration-detected-via-ftp/report.md) |
 | 5 | Lazarus (APT38) ClickFix phishing results in payload download and VBScript execution on the endpoint | LetsDefend | High | Phishing | 06/03/25 | [Read](soc337-lazarus-phishing-campaign-detected(APT38)/report.md) |
-| 6 | DLL Side Loading via ISO Attachment | LetsDefend | Medium | Malware | 09/09/24 | [Read](soc319-suspicious-dll-execution-detected/report.md) |
-| 7 | Executable Disguised as a Text File Using a Unicode Override Character | LetsDefend | Medium | Malware | 11/07/24 | [Read](soc300-right-to-left-override-detected/report.md) |
-| 8 | SSH Account Compromise Leading to Encoded Exfiltration of System Account Data | LetsDefend | Medium | Brute Force / Data Exfiltration | 07/08/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(medium)/report.md) |
+| 6 | Phishing Attachment Leads to System Discovery and Exfiltration Over Pastebin | LetsDefend | High | Data Exfiltration | 26/06/24 | [Read](soc293-exfiltration-over-pastebin-detected/report.md) |
+| 7 | DLL Side Loading via ISO Attachment | LetsDefend | Medium | Malware | 09/09/24 | [Read](soc319-suspicious-dll-execution-detected/report.md) |
+| 8 | Executable Disguised as a Text File Using a Unicode Override Character | LetsDefend | Medium | Malware | 11/07/24 | [Read](soc300-right-to-left-override-detected/report.md) |
+| 9 | SSH Account Compromise Leading to Encoded Exfiltration of System Account Data | LetsDefend | Medium | Brute Force / Data Exfiltration | 07/08/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(medium)/report.md) |
 
 <!-- INCIDENTS:END -->
 

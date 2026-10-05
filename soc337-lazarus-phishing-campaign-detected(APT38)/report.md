@@ -69,11 +69,11 @@ Review of update.vbs confirmed the script was never finished. The base URL is st
 
 The email was allowed through by the mail gateway instead of blocked, and no control stopped the download or the execution. Impact was avoided because the attacker's script was not fully configured, and no follow up activity was observed on the host.
 
-**Escalation:** Escalated to L2.
+**Escalation:**
 
-A targeted phishing email attributed to Lazarus reached a user's inbox, the user acted on it, and an attacker supplied script executed on the endpoint. The host 172.16.17.214 has already been isolated from the network.
+Requared.
 
-For scope, the activity is confined to this host and this user account. The executed script had no working payload URL, no persistence was created, no C2 was observed, and Email Security shows no other recipients from this campaign. The first thing L2 should pick up is confirmation that no second stage payload reached the host. After that, the control gaps that let the mail and the download through matter more than hunting for a wider compromise.
+A targeted phishing email attributed to Lazarus reached a user's inbox, the user acted on it, and an attacker supplied script executed on the endpoint. The host 172.16.17.214 has already been isolated from the network. For scope, the activity is confined to this host and this user account. The executed script had no working payload URL, no persistence was created, no C2 was observed, and Email Security shows no other recipients from this campaign.
 
 **Recommended Remediation Action:**
 

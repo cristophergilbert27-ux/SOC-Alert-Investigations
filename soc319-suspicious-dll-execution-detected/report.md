@@ -78,11 +78,9 @@ No control stopped any of it. The mail gateway allowed the message, the proxy al
 
 **Escalation:**
 
-Escalated to L2 and Incident Response.
+Requaired.
 
 A user ran an attacker supplied binary that side loaded a malicious DLL inside a Microsoft signed process, created a staging directory and attempted to pull down a second stage. Nothing in the mail, network or endpoint layer blocked it, and the endpoint product produced no detection at all. The control gap here deserves as much attention as the host does.
-
-Scope as established at L1: activity is confined to this host and this account, the second stage never landed, c:\wnd is empty, no persistence was found and no C2 traffic was observed. The decoy document carries no exploit.
 
 **Recommended Remediation Action**
 

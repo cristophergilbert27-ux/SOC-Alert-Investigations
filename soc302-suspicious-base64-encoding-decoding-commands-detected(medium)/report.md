@@ -83,11 +83,9 @@ The outbound connection was allowed rather than blocked. Both uploads completed,
 
 **Escalation:**
 
-Escalated to L2.
+Requaired.
 
-The host sustained a full root compromise and the exfiltration finished without interruption. The repeat upload confirms the outbound path was working, not merely attempted. Two actions cannot wait for the L2 queue: isolate 172.16.20.43 and disable the analyst account.
-
-L2 should pick up the credential question first. No failed attempts were recorded against analyst, so the password was known before the attack rather than discovered during it. That points at reuse or a prior leak, and the same password may still be valid on other systems in the environment.
+The host sustained a full root compromise and the exfiltration finished without interruption. The repeat upload confirms the outbound path was working, not merely attempted. No failed attempts were recorded against analyst, so the password was known before the attack rather than discovered during it. That points at reuse or a prior leak, and the same password may still be valid on other systems in the environment.
 
 Scope is narrow in the attacker's favour. Activity stays on this host and this account, no SSH keys were planted, no cron entries were added, and no lateral movement appears in the logs. The file that left the host is /etc/passwd, which carries no password hashes. Those sit in /etc/shadow and were not touched.
 
