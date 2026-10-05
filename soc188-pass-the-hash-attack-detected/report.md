@@ -29,8 +29,6 @@ The rule fires when Windows telemetry suggests that an attacker is authenticatin
 
 ## 2. Alert Report
 
-The report as submitted in the alert's Analyst Comment before escalating, following the platform's own reporting fields.
-
 **Verdict:** True Positive
 
 **Time of Activity:**
