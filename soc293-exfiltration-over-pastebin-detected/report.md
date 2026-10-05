@@ -90,18 +90,17 @@ Requaired. The attacker got code execution on a workstation and a successful out
 
 **Indicators of Compromise**
 
-| Type         | Indicator                                                        | Notes                                                   |
-| ------------ | ---------------------------------------------------------------- | ------------------------------------------------------- |
-| Hash         | 2f2d8121d6b351a32a5c55995450200f3cafd3d26b2cf5f646cd3a80f175450e | quick-fix.zip, 1/51 on VirusTotal                       |
-| IP           | 103.145.252.87                                                   | SMTP source of the phishing mail                        |
-| IP           | 104.20.3.235                                                     | pastebin.com, shared infrastructure, do not block       |
-| Email        | info@dachfix.com                                                 | Phishing sender                                         |
-| Domain / URL | https://files-ld.s3.us-east-2.amazonaws.com/quick-zip.fix        | Payload download                                        |
-| Domain / URL | https://pastebin.com/api/api_post.php                            | Exfiltration endpoint                                   |
-| Domain / URL | https://pastebin.com/rM7up09b                                    | Paste holding the stolen output, now removed            |
-| File Name    | quick-fix.zip, system_users.ps1, fix.lnk                         | Archive and its contents                                |
-| File Name    | sys_usrs.txt, paste.txt                                          | Artifacts the script left in the user profile           |
-| Other        | qpBFeW7fi0eWTDNMPcjH4HPPBDzzhJ6B                                 | Hardcoded Pastebin API key tied to the attacker account |
+| Type         | Indicator                                                        | Notes                                             |
+| ------------ | ---------------------------------------------------------------- | ------------------------------------------------- |
+| Hash         | 2f2d8121d6b351a32a5c55995450200f3cafd3d26b2cf5f646cd3a80f175450e | quick-fix.zip, 1/51 on VirusTotal                 |
+| IP           | 103.145.252.87                                                   | SMTP source of the phishing mail                  |
+| IP           | 104.20.3.235                                                     | pastebin.com, shared infrastructure, do not block |
+| Email        | info@dachfix.com                                                 | Phishing sender                                   |
+| Domain / URL | https://files-ld.s3.us-east-2.amazonaws.com/quick-zip.fix        | Payload download                                  |
+| Domain / URL | https://pastebin.com/api/api_post.php                            | Exfiltration endpoint                             |
+| Domain / URL | https://pastebin.com/rM7up09b                                    | Paste holding the stolen output, now removed      |
+| File Name    | quick-fix.zip, system_users.ps1, fix.lnk                         | Archive and its contents                          |
+| File Name    | sys_usrs.txt, paste.txt                                          | Artifacts the script left in the user profile     |
 
 **MITRE ATT&CK**
 
