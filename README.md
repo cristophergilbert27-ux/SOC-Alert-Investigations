@@ -28,6 +28,8 @@ The focus here is the reasoning: what was checked, what each piece of evidence r
 | 12 | DLL Side Loading via ISO Attachment | LetsDefend | Medium | Malware | 09/09/24 | [Read](soc319-suspicious-dll-execution-detected/report.md) |
 | 13 | Executable Disguised as a Text File Using a Unicode Override Character | LetsDefend | Medium | Malware | 11/07/24 | [Read](soc300-right-to-left-override-detected/report.md) |
 | 14 | SSH Account Compromise Leading to Encoded Exfiltration of System Account Data | LetsDefend | Medium | Brute Force / Data Exfiltration | 07/08/24 | [Read](soc302-suspicious-base64-encoding-decoding-commands-detected(medium)/report.md) |
+| 15 | Suspicious Email from External Domain Delivered to Internal User | TryHackMe | Low | Phishing | 05/10/26 | [Read](suspicious-email-was-received-from-an-external-sender/report.md) |
+| 16 | Uncommon Parent Child Process Relationship Detected on an Internal Host | TryHackMe | Low | Execution | 05/10/26 | [Read](suspicious-process-with-an-uncommon-parent-child-relationship/report.md) |
 
 <!-- INCIDENTS:END -->
 
