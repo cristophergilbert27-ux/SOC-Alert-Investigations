@@ -63,7 +63,9 @@ The connection was allowed rather than blocked. SSH on this host was reachable f
 
 Log Management shows no connections to any of the ten listed IP addresses, and a search for the attacker IP across the environment returns 172.16.17.74 as the only destination. There is no sign of lateral movement so far, which is a statement about timing rather than safety.
 
-**Escalation:** Escalated to L2. The brute force gave the attacker an interactive shell, and the file they decoded carries working credentials for ten other systems. L2 should start there: reset those credentials and put the corresponding systems under watch for login attempts. Forensics on Wilburn can follow. The host is isolated and no longer moving, but the credentials are loose.
+**Escalation:**
+
+Escalated to L2. The brute force gave the attacker an interactive shell, and the file they decoded carries working credentials for ten other systems.
 
 **Recommended Remediation Action:**
 

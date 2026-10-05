@@ -84,8 +84,6 @@ A user ran an attacker supplied binary that side loaded a malicious DLL inside a
 
 Scope as established at L1: activity is confined to this host and this account, the second stage never landed, c:\wnd is empty, no persistence was found and no C2 traffic was observed. The decoy document carries no exploit.
 
-First things for L2 to pick up: confirm no payload was retrieved outside the logged window, and find out whether anyone else received the same campaign.
-
 **Recommended Remediation Action**
 
 1. Isolate host 172.16.17.122 until it is confirmed that no payload was retrieved. Preserve copies of perspiciatism.zip, PERSPICIATISM.iso, the extracted directory and c:\wnd as evidence before removing them from the host.
