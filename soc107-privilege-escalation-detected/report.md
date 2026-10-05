@@ -1,4 +1,4 @@
-# Incident Report — Privilege Escalation Detected
+# Incident Report: Privilege Escalation Detected
 
 **Incident:** Privilege Escalation Tool Executed After Phishing Attachment Opened
 **Platform:** LetsDefend
@@ -24,8 +24,6 @@
 | Device Action       | Allowed                              |
 
 This rule watches for tools that try to raise an ordinary user account to SYSTEM, which is the highest level of access on a Windows machine. It fired because a file called JuicyPotato.exe ran on a workstation named RichardPRD. JuicyPotato is a publicly available hacking tool with no business use whatsoever, so finding it on a staff laptop is already a problem before anyone asks what it did there.
-
-![Alert detail](screenshots/01-alert-detail.png)
 
 ---
 
